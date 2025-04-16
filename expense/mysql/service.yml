@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mini-svc
+  labels:
+    app: mini-sql
+spec:
+  ports:
+  - port: 3306
+    targetport: 3306
+  clusterIP: None
+  selector:
+    app: mini-sql
+
+    #done

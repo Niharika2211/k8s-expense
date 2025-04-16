@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: mini-sts-sql
+spec:
+  selector:
+    matchLabels:
+      app: mini-sql 
+  serviceName: "mini-svc"
+  replicas: 3
+  minReadySeconds: 10 
+  template:
+    metadata:
+      labels:
+        app: mini-sql
+    spec:
+      terminationGracePeriodSeconds: 10
+      containers:
+      - name: mini-sql
+        image: 522814728660.dkr.ecr.us-east-1.amazonaws.com/mini-expense-mysql
+        ports:
+        - containerPort: 3306
+          name: mini-mysql
+        volumeMounts:
+        - name: mini-mysql
+          mountPath: /var/lib/mysql
+        env:
+        - name: qa-mini-scrt
+          valueFrom:
+            secretKeyRef:
+              name: qa-mini-scrt           
+              key: password      
+  volumeClaimTemplates:
+  - metadata:
+      name: mini-mysql
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      storageClassName: "mini-sc"
+      resources:
+        requests:
+          storage: 1Gi
