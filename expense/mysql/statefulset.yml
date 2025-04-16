@@ -17,7 +17,7 @@ spec:
       terminationGracePeriodSeconds: 10
       containers:
       - name: mini-sql
-        image: 522814728660.dkr.ecr.us-east-1.amazonaws.com/mini-expense-mysql
+        image: 522814728660.dkr.ecr.us-east-1.amazonaws.com/mini-expense-mysql:v2
         ports:
         - containerPort: 3306
           name: mini-mysql
