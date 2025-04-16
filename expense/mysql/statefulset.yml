@@ -25,7 +25,7 @@ spec:
         - name: mini-mysql
           mountPath: /var/lib/mysql
         env:
-        - name: qa-mini-scrt
+        - name: MYSQL_ROOT_PASSWORD
           valueFrom:
             secretKeyRef:
               name: qa-mini-scrt           
