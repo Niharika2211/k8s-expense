@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: dev-backend
+data:
+  DB_DATABASE: transactions
+  DB_HOST: dev-mysql-external-name
