@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: 522814728660.dkr.ecr.us-east-1.amazonaws.com/mini-expense-frontend
+        image: 5522814728660.dkr.ecr.us-east-1.amazonaws.com/mini-expense-frontend:v2
         ports:
         - containerPort: 80
         resources:
