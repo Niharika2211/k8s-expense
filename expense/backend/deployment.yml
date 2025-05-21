@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: 522814728660.dkr.ecr.us-east-1.amazonaws.com/mini-expense-backend
+        image: 522814728660.dkr.ecr.us-east-1.amazonaws.com/mini-expense-backend:v2
         ports:
         - containerPort: 8080
         resources:
